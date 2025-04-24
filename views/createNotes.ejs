@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Note Input</title>
+  <link rel="stylesheet" href="/createNotes.css">
+</head>
+<body>
+  <main>
+    <div class="note-input" id="noteBox">
+      <form action="/" method="post">
+        <input type="text" name="title" class="note-title" placeholder="Take a note..." />
+        <input type="text" name="tags" class="note-tags" placeholder="tags" />
+        <textarea
+          name = "content"
+          class="note-content"
+          placeholder="Note content..."
+          rows="3"
+        ></textarea>
+        <div class="note-actions">
+          <button type="submit" class="add-btn">Add</button>
+        </div>
+        </div>
+      </form>
+  </main>
+  <script>
+    const noteBox = document.getElementById("noteBox");
+    noteBox.addEventListener("click", () => {
+      noteBox.classList.add("expanded");
+    });
+    document.addEventListener("click", (e) => {
+      if (!noteBox.contains(e.target)) {
+        noteBox.classList.remove("expanded");
+      }
+    });
+  </script>
+  
+</body>
+</html>

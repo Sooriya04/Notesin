@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up to Notesin</title>
+  <link rel="stylesheet" href="/forms.css">
+</head>
+<body>
+<div class="container">
+  <header>Sign Up to Notesin</header>
+  <form action="/signup" method="POST">
+        <div class="field name-field">
+            <div class="input-field">
+                <input type="text" placeholder="Enter your Name" name="name" class="name" required />
+            </div>
+            <span class="error name-error">
+                <i class="bx bx-error-circle error-icon"></i>
+                <p class="error-text">Please enter a valid Name</p>
+            </span>
+        </div>
+        
+        <div class="field email-field">
+            <div class="input-field">
+                <input type="email" placeholder="Enter your email" name="email" class="email" required />
+            </div>
+            <span class="error email-error">
+                <i class="bx bx-error-circle error-icon"></i>
+                <p class="error-text">Please enter a valid email</p>
+            </span>
+        </div>
+
+        <div class="field create-password">
+            <div class="input-field">
+                <input type="password" placeholder="Password" class="password" required />
+            </div>
+            <span class="error password-error">
+                <i class="bx bx-error-circle error-icon"></i>
+                <p class="error-text">
+                    Please enter at least 8 characters with a number, symbol, and both uppercase and lowercase letters.
+                </p>
+            </span>
+        </div>
+
+        <div class="field confirm-password">
+            <div class="input-field">
+                <input type="password" placeholder="Confirm Password" name="password" class="cPassword" required />
+            </div>
+            <span class="error cPassword-error">
+                <i class="bx bx-error-circle error-icon"></i>
+                <p class="error-text">Passwords didn't match</p>
+            </span>
+        </div>
+
+        <div class="links">
+            <a href="#">Forgot Password</a>
+            <a href="/login">Login</a>
+        </div>
+
+        <div class="input-field button">
+            <input type="submit" value="Signup Now" />
+        </div>
+    </form>
+</div>
+</body>
+</html>

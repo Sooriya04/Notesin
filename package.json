@@ -1,0 +1,32 @@
+{
+  "name": "notes-making-app",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sooriya04/note-making-app.git"
+  },
+  "author": "Sooriya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sooriya04/note-making-app/issues"
+  },
+  "homepage": "https://github.com/Sooriya04/note-making-app#readme",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^2.2.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "install": "^0.13.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.13.2",
+    "nodemon": "^3.1.9"
+  }
+}
