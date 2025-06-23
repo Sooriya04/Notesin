@@ -43,7 +43,7 @@ npm install
 ````
 ### 3. Start the application
 ```bash
-npm start
+npx nodemon server.js
 ```
 
 ## 📬 Contact
