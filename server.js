@@ -4,6 +4,7 @@ const ejs = require("ejs");
 const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
+const bcrypt = require("bcrypt");
 require("dotenv").config();
 
 const JWT_SECRET = process.env.JWT_SECRET;
