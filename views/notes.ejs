@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Notes</title>
+    <link rel="stylesheet" href="/notes.css" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Note Creation Box -->
+    <main class="note-main">
+      <form action="/" method="POST" autocomplete="off" class="note-form">
+        <div class="note-box" id="noteBox">
+          <div class="note-top">
+            <input
+              type="text"
+              name="title"
+              placeholder="Title"
+              class="note-title"
+            />
+            <i class="fa-regular fa-bell note-icon pin-icon"></i>
+          </div>
+          <textarea
+            name="content"
+            placeholder="Take a note..."
+            class="note-content"
+            rows="2"
+          ></textarea>
+          <div class="note-bottom">
+            <div class="note-icons">
+              <i class="fa-solid fa-font"></i>
+              <i class="fa-solid fa-palette"></i>
+              <i class="fa-regular fa-bell"></i>
+              <i class="fa-solid fa-user-plus"></i>
+              <i class="fa-regular fa-image"></i>
+              <i class="fa-solid fa-box-archive"></i>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+              <i class="fa-solid fa-rotate-left disabled"></i>
+              <i class="fa-solid fa-rotate-right disabled"></i>
+            </div>
+            <button type="submit" class="note-close">Close</button>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <!-- Notes Display -->
+    <div class="container">
+      <div class="row">
+        <% notes.forEach(note => { %>
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h3><a href="/notes/<%= note.id %>"><%= note.title %></a></h3>
+              <p><%= note.content.substring(0, 100) %>...</p>
+              <form method="POST" action="/notes/<%= note.id %>/delete">
+                <button type="submit" class="btn btn-sm">Delete</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <script>
+      const noteBox = document.getElementById("noteBox");
+      const titleInput = noteBox.querySelector(".note-title");
+      const closeButton = noteBox.querySelector(".note-close");
+
+      noteBox.addEventListener("click", () => {
+        noteBox.classList.add("expanded");
+        titleInput.style.display = "block";
+        closeButton.style.display = "inline";
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!noteBox.contains(e.target)) {
+          noteBox.classList.remove("expanded");
+          titleInput.style.display = "none";
+          closeButton.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

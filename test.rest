@@ -1,0 +1,58 @@
+### Signup a new user
+POST http://localhost:3000/signup
+Content-Type: application/x-www-form-urlencoded
+
+email=sooriya4361@gmail.com&password=sooriya123456
+
+###
+
+### Login user and get JWT cookie
+POST http://localhost:3000/login
+Content-Type: application/x-www-form-urlencoded
+
+email=testuser@example.com&password=123456
+
+# 👇 After sending this request, copy the token from the "Set-Cookie" in the response.
+# Example:
+# Set-Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6...
+
+###
+
+### Get all notes (replace token below)
+GET http://localhost:3000/
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...  ← Paste actual token here
+
+###
+
+### Create a new note
+POST http://localhost:3000/
+Content-Type: application/x-www-form-urlencoded
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+title=My Note Title 1 &tags=personal,ideas&content=This is the content of my note 1.
+
+###
+
+### View a specific note
+GET http://localhost:3000/notes/68767e6e3a780c215b76a7ac
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+###
+
+### Update a note
+POST http://localhost:3000/notes/68767e893a780c215b76a7ae
+Content-Type: application/x-www-form-urlencoded
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+title=Updated Title&content=Updated content here
+
+###
+
+### Delete a note
+POST http://localhost:3000/notes/68767e8b3a780c215b76a7b0/delete
+Cookie: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+###
+
+### Logout
+GET http://localhost:3000/logout
